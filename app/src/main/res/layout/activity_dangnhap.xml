@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    tools:context=".activity_dangnhap">
+
+    <LinearLayout
+        android:id="@+id/lDangNhap"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="-8dp"
+            android:background="@drawable/btn_true"
+            android:clickable="true"
+            android:fontFamily="@font/nunito_black"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="Đăng nhập"
+            android:textColor="#C1FFC2"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_true"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="25dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp">
+
+                <ImageView
+                    android:id="@+id/img_account"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_accountname"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#BBBBBB" />
+
+                <TextView
+                    android:id="@+id/txt_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="Tài khoản"
+                    android:textColor="#888888"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/img_account"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edt_username_dangnhap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="start"
+                    android:fontFamily="@font/nunito_black"
+                    android:hint="tài khoản của bạn"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="7dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#666666"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_account"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_account" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp">
+
+                <ImageView
+                    android:id="@+id/img_password"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_key"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#BBBBBB" />
+
+                <TextView
+                    android:id="@+id/txt_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="Mật khẩu"
+                    android:textColor="#888888"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/img_password"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:boxBackgroundColor="#222222"
+                    app:boxBackgroundMode="filled"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_password"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_password"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#BBBBBB">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_userpassword_dangnhap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="start"
+                        android:fontFamily="@font/nunito_black"
+                        android:hint="mật khẩu của bạn"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:paddingVertical="5dp"
+                        android:paddingStart="0dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="#666666"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_taotaikhoan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/nunito_black"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Tạo tài khoản"
+                android:textColor="#BEE991"
+                android:stateListAnimator="@animator/btn_nhung"
+                android:textSize="14sp"
+                app:backgroundTint="#222222"
+                app:cornerRadius="15dp"
+                app:strokeColor="#BEF085"
+                app:strokeWidth="1.5dp"
+
+                />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_dangnhap"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/btn_game"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_vantay"
+            android:stateListAnimator="@animator/btn_nhung"
+            app:tint="#94D343" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lDangKy"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#222222">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/lContent_DangKy"
+            android:orientation="vertical"
+            android:paddingHorizontal="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/btn_game_selected"
+                android:clickable="true"
+                android:fontFamily="@font/nunito_black"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="5dp"
+                android:stateListAnimator="@animator/btn_nhung"
+                android:text="Tạo tài khoản"
+                android:textColor="#C1DEFF"
+                android:textSize="26sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_game_selected"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_fullname"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_accountname"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#BBBBBB" />
+
+                    <TextView
+                        android:id="@+id/txt_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="Họ và tên"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/img_fullname"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edt_fullname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="start"
+                        android:fontFamily="@font/nunito_black"
+                        android:hint="nên gọi bạn là gì"
+                        android:inputType="textPersonName"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:paddingHorizontal="3dp"
+                        android:paddingVertical="7dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="#666666"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_fullname"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_fullname" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_ngaySinh"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_calendar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#BBBBBB" />
+
+                    <TextView
+                        android:id="@+id/txt_ngaySinh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="Ngày sinh"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/img_ngaySinh"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edt_ngaySinh"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:backgroundTint="#444444"
+                        android:enabled="false"
+                        android:fontFamily="@font/nunito_black"
+                        android:hint="bạn sinh ngày nào"
+                        android:paddingHorizontal="3dp"
+                        android:paddingVertical="7dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="#666666"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_select_date"
+                        app:layout_constraintStart_toEndOf="@+id/img_ngaySinh"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_ngaySinh" />
+
+                    <ImageButton
+                        android:id="@+id/btn_select_date"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_calendar"
+                        android:stateListAnimator="@animator/btn_nhung"
+                        app:layout_constraintBottom_toBottomOf="@+id/edt_ngaySinh"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/edt_ngaySinh"
+                        app:tint="#C1DEFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_gender"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_gioitinh"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#BBBBBB" />
+
+                    <TextView
+                        android:id="@+id/txt_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="Giới tính"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/img_gender"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_gender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="horizontal"
+                        android:paddingVertical="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_gender"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_gender">
+
+                        <RadioButton
+                            android:id="@+id/rd_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/nunito_black"
+                            android:text="Nam"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/rd_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/nunito_black"
+                            android:text="Nữ"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </RadioGroup>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_account_create"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_taikhoan"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#BBBBBB" />
+
+                    <TextView
+                        android:id="@+id/txt_account_create"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="Tài khoản"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/img_account_create"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edt_account_create"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="start"
+                        android:fontFamily="@font/nunito_black"
+                        android:hint="tài khoản của bạn"
+                        android:inputType="text"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:paddingHorizontal="3dp"
+                        android:paddingVertical="7dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="#666666"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_account_create"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_account_create" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_password_create"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_key"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#BBBBBB" />
+
+                    <TextView
+                        android:id="@+id/txt_password_create"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="Mật khẩu"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/img_password_create"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout_create"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:boxBackgroundColor="#222222"
+                        app:boxBackgroundMode="filled"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_password_create"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_password_create"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#BBBBBB">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_password_create"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="start"
+                            android:fontFamily="@font/nunito_black"
+                            android:hint="mật khẩu của bạn"
+                            android:inputType="textPassword"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="0dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="#666666"
+                            android:textSize="18sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_dangky"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/btn_game_selected"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_vantay"
+                android:stateListAnimator="@animator/btn_nhung"
+                app:tint="#C1DEFF" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_quaylaidangnhap"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_game_selected"
+            android:scaleType="centerInside"
+            android:paddingHorizontal="5dp"
+            android:paddingTop="3dp"
+            android:src="@drawable/ic_back_muiten"
+            android:stateListAnimator="@animator/btn_nhung"
+            app:tint="#C1DEFF"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="70dp"
+            app:layout_constraintLeft_toLeftOf="@id/lContent_DangKy"
+            app:layout_constraintBottom_toBottomOf="@+id/lContent_DangKy"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

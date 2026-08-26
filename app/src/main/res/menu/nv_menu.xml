@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Trang chủ"
+        android:id="@+id/miHome"
+        android:icon="@drawable/ic_home"
+        />
+    <item
+        android:title="Tra cứu"
+        android:id="@+id/miLookup"
+        android:icon="@drawable/ic_search"
+        />
+    <item
+        android:title="Từ điển"
+        android:id="@+id/miList"
+        android:icon="@drawable/ic_wordlist"
+        />
+    <item
+        android:title="Thêm tài liệu"
+        android:id="@+id/miAdd"
+        android:icon="@drawable/ic_add"
+        />
+    <item
+        android:title="Đăng xuất"
+        android:id="@+id/miLogOut"
+        android:icon="@drawable/ic_logout"
+        />
+</menu>

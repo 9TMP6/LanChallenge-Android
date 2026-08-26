@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/nunito_black"
+        android:gravity="center"
+        android:letterSpacing="0.1"
+        android:text="Chỉnh sửa"
+        android:textColor="#2A9D8F"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txt_editword_newword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_black"
+        android:labelFor="@+id/edt_editword_newword"
+        android:text="Từ khoá"
+        android:textColor="#2A9D8F"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edt_editword_newword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/bg_edit_g2"
+        android:fontFamily="@font/nunito_black"
+        android:hint="nhập từ mới..."
+        android:inputType="textMultiLine|text"
+        android:maxLength="60"
+        android:maxLines="3"
+        android:paddingTop="0dp"
+        android:text="Hé lànajsajkdkld kajskdjsakjdksajkdjsajđsạdksạdkjsakdjkạdkậdsaaaaaalkjdslkô"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_editword_meanword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_black"
+        android:labelFor="@+id/edt_editword_meanword"
+        android:text="Ý nghĩa"
+        android:textColor="#2A9D8F"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edt_editword_meanword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/bg_edit_g2"
+        android:fontFamily="@font/nunito_black"
+        android:hint="nghĩa của từ đó..."
+        android:inputType="textMultiLine|text"
+        android:maxLength="60"
+        android:maxLines="3"
+        android:paddingTop="0dp"
+        android:text="Hé lànajsajkdkld kajskdjsakjdksajkdjsajđsạdksạdkjsakdjkạdkậdsaaaaaalkjdslkô"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_editword_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_black"
+        android:labelFor="@+id/edt_editword_desc"
+        android:text="Chú thích"
+        android:textColor="#2A9D8F"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edt_editword_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/bg_edit_g2"
+        android:fontFamily="@font/nunito_black"
+        android:hint="ghi chú thêm..."
+        android:inputType="textMultiLine|text"
+        android:maxLength="60"
+        android:maxLines="3"
+        android:paddingTop="0dp"
+        android:text="Hé lànajsajkdkld kajskdjsakjdksajkdjsajđsạdksạdkjsakdjkạdkậdsaaaaaalkjdslkô"
+        android:textSize="20sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_editword_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btndetail"
+            android:backgroundTint="#616161"
+            android:fontFamily="@font/nunito_black"
+            android:letterSpacing="0.05"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="Huỷ"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_editword_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/bg_btndetail"
+            android:backgroundTint="#4DBDA1"
+            android:fontFamily="@font/nunito_black"
+            android:letterSpacing="0.05"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="Lưu"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_editword_cancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

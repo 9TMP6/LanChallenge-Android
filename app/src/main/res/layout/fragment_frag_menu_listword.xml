@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4DBDA1"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    tools:context=".frag_menu_listword">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_close"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/white"
+            android:paddingStart="15dp"
+            android:stateListAnimator="@animator/btn_truot"
+            app:icon="@drawable/ic_close_2"
+            app:iconSize="35sp" />
+
+        <TextView
+            android:id="@+id/txtHeader_Menu_Listword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:autoSizeMaxTextSize="30sp"
+            android:autoSizeTextType="uniform"
+            android:clickable="true"
+            android:fontFamily="@font/nunito_black"
+            android:letterSpacing="0.05"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="Từ vựng của bạn"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="5dp">
+
+        <Spinner
+            android:id="@+id/btn_sort_listword"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            app:tint="@null"
+            android:background="@drawable/bg_searchview_listword"
+            android:popupBackground="@drawable/bg_searchview_listword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/sv_searchListword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/bg_searchview_listword"
+            android:iconifiedByDefault="true"
+            android:inputType="text"
+            android:maxWidth="280dp"
+            android:padding="2dp"
+            android:queryHint="bạn muốn tìm gì..."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_sort_listword"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_add_listword"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_searchview_listword"
+            android:padding="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_add_listword"
+            android:stateListAnimator="@animator/btn_nhung"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_listword"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_rc_listword"
+        android:fadingEdgeLength="20dp"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp"
+        android:requiresFadingEdge="vertical"
+        android:scrollbarSize="3dp"
+        android:scrollbars="vertical" />
+</LinearLayout>

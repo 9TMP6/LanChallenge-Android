@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:paddingHorizontal="5dp"
+    tools:context=".frag_lookup">
+
+    <LinearLayout
+        android:id="@+id/lHeader_Lookup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_bottom"
+        android:backgroundTint="#3F51B5"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_close"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/white"
+                android:paddingStart="15dp"
+                android:stateListAnimator="@animator/btn_truot"
+                app:icon="@drawable/ic_close_2"
+                app:iconSize="35sp" />
+
+            <TextView
+                android:id="@+id/txtHeader_Lookup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:clickable="true"
+                android:fontFamily="@font/nunito_black"
+                android:letterSpacing="0.05"
+                android:stateListAnimator="@animator/btn_nhung"
+                android:text="Tra cứu từ vựng "
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_lookup"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/bg_edt_lookup"
+                android:ellipsize="start"
+                android:fontFamily="@font/nunito_black"
+                android:hint="tìm kiếm chính xác"
+                android:inputType="text"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:textColor="#444444"
+                android:textSize="20sp">
+
+                <requestFocus />
+            </EditText>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_search_lookup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/bg_btn_search_lookup"
+                android:fontFamily="@font/nunito_black"
+                android:stateListAnimator="@animator/btn_nhung"
+                android:text="Tra cứu"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lResult_Lookup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rc_listword"
+        android:backgroundTint="#4e57ca"
+        android:paddingVertical="20dp"
+        android:translationY="800dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lHeader_Lookup">
+
+        <LinearLayout
+            android:id="@+id/lButton_Lookup"
+            android:layout_width="330dp"
+            android:layout_height="150dp"
+            android:background="@drawable/bg_btn_result_lookup"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lWord">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_detail_lookup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#E8F5E9"
+                android:fontFamily="@font/nunito_black"
+                android:stateListAnimator="@animator/btn_nhung"
+                android:text="Chi tiết"
+                android:textColor="#2E7D32"
+                android:textSize="16sp"
+                app:cornerRadius="15dp"
+                app:strokeColor="#3bc268"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_Edit_lookup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#FFF8E1"
+                android:fontFamily="@font/nunito_black"
+                android:stateListAnimator="@animator/btn_nhung"
+                android:text="Sửa"
+                android:textColor="#B78103"
+                android:textSize="16sp"
+                app:cornerRadius="15dp"
+                app:strokeColor="#D97706"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_delete_lookup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFEBEE"
+                android:fontFamily="@font/nunito_black"
+                android:stateListAnimator="@animator/btn_nhung"
+                android:text="Xoá"
+                android:textColor="#C62828"
+                android:textSize="16sp"
+                app:cornerRadius="15dp"
+                app:strokeColor="#ff1818"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtMean_Lookup"
+            android:layout_width="340dp"
+            android:layout_height="150dp"
+            android:autoSizeMaxTextSize="16sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/bg_btn_result_lookup"
+            android:fontFamily="@font/nunito_black"
+            android:gravity="bottom|center_horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingBottom="35dp"
+            android:text="Từ này có nghĩa là như thế này nè các bạn ơi!"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lWord" />
+
+        <LinearLayout
+            android:id="@+id/lWord"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:background="@drawable/bg_btn_result_lookup"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtKey_Lookup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito_black"
+                android:maxLength="60"
+                android:textColor="#444444"
+                android:maxLines="3"
+                android:text="Congradulation!"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/txtIpa_Lookup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="16sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito_black"
+                android:gravity="center"
+                android:maxLength="40"
+                android:maxLines="2"
+                android:text="/hello/"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/lEmpty_Lookup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rc_listword"
+        android:backgroundTint="#4e57ca"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="20dp"
+        android:translationY="800dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lHeader_Lookup">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:alpha="0.7"
+            android:src="@drawable/ic_notfound"
+            app:tint="@color/white" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/nunito_black"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:text="Không tìm thấy kết quả."
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_Empty_Lookup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/nunito_black"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:text="'INDEPENDENCE' không có trong từ điển của bạn."
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_detail_empty_lookup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4e57ca"
+            android:fontFamily="@font/nunito_black"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="Tra cứu nguồn khác"
+            android:textColor="#EEEEEE"
+            android:textSize="16sp"
+            app:cornerRadius="15dp"
+            app:strokeColor="#CCCCCC"
+            app:strokeWidth="2dp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

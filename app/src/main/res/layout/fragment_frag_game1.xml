@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    tools:context=".frag_game1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lHeader_G1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_bottom_g1"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtHeader_G1"
+            style="@style/style_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Word Quiz"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtDes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:fontFamily="@font/nunito_medium"
+            android:gravity="center"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="Bạn có thể đi xa cỡ nào?"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHeader_G1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_close"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/white"
+            android:paddingStart="20dp"
+            android:paddingTop="0dp"
+            android:stateListAnimator="@animator/btn_truot"
+            app:icon="@drawable/ic_close_2"
+            app:iconGravity="top"
+            app:iconSize="35sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtHeader_G1"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/lProgress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lHeader_G1">
+
+        <ProgressBar
+            android:id="@+id/pg_Score_Dot"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:progress="100"
+            android:progressDrawable="@drawable/bg_progress" />
+
+        <ProgressBar
+            android:id="@+id/pg_Score"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:max="250"
+            android:progress="20"
+            android:progressDrawable="@drawable/bg_progress"
+            android:secondaryProgress="40" />
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:fontFamily="@font/nunito_medium"
+            android:gravity="end|center_vertical"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="9999"
+            android:textColor="#68E447"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_fire"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:stateListAnimator="@animator/btn_nhung"
+            app:srcCompat="@drawable/ic_fire"
+            app:tint="#68E447" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lContent_G1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lProgress">
+
+        <TextView
+            android:id="@+id/txtLabelContent"
+            style="@style/style_h2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:text="bạn biết từ này chứ?"
+            android:textColor="#DF79C77D"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/txtContent"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/btn_game"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:stateListAnimator="@animator/btn_nhung">
+
+            <TextView
+                android:id="@+id/txtKey_G1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/nunito_black"
+                android:gravity="center"
+                android:maxLines="3"
+                android:paddingHorizontal="2dp"
+                android:text="Vinh quang đời đời thuộc về dân tộc Việt Nam văn hiến và anh hùng."
+                android:textColor="#EEEEEE"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtIPA_G1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/nunito_medium"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:maxLines="2"
+                android:text="/VIET NAM/"
+                android:textColor="#BBBBBB"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/lAns_G1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:paddingVertical="10dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@+id/btnKiemTra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow android:layout_marginVertical="10dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_One_G1"
+                style="@style/style_btnAns"
+                android:text="Đảng Cộng Sản Việt Nam" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Two_G1"
+                style="@style/style_btnAns"
+                android:text="quang vinh muôn năm" />
+        </TableRow>
+
+        <TableRow android:layout_marginVertical="10dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Three_G1"
+                style="@style/style_btnAns"
+                android:text="Nước Cộng Hoà Xã Hội Chủ Nghĩa Việt Nam" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Four_G1"
+                style="@style/style_btnAns"
+                android:text="muôn năm" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnKiemTra"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/btn_game"
+        android:fontFamily="@font/nunito_black"
+        android:hapticFeedbackEnabled="true"
+        android:letterSpacing="0.15"
+        android:paddingTop="12dp"
+        android:paddingBottom="17dp"
+        android:stateListAnimator="@animator/btngames"
+        android:tag="check"
+        android:text="Kiểm Tra"
+        android:textAllCaps="false"
+        android:textColor="#80CCCCCC"
+        android:textSize="22sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

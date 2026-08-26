@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    tools:context=".frag_detailuser">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_view_detailuser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_avatar_user"
+                        android:layout_width="120dp"
+                        android:layout_height="115dp"
+                        android:clickable="true"
+                        android:src="@drawable/avatar"
+                        android:stateListAnimator="@animator/btn_nhung"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/btn_change_avatar_user"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="-37dp"
+                        android:layout_marginTop="-35dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_changeimg"
+                        android:stateListAnimator="@animator/btn_nhung"
+                        android:visibility="invisible"
+                        app:civ_border_color="#222222"
+                        app:civ_border_width="4dp"
+                        app:civ_circle_background_color="#888888"
+                        app:layout_constraintStart_toEndOf="@+id/img_avatar_user"
+                        app:layout_constraintTop_toBottomOf="@+id/img_avatar_user" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/txtHoten_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:gravity="center"
+                    android:letterSpacing="0.05"
+                    android:paddingHorizontal="5dp"
+                    android:text="Dattmp Nguyen"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/btn_game"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_accountname" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/nunito_medium"
+                            android:labelFor="@+id/edt_name_user"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Họ tên"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/edt_name_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/transparent"
+                            android:enabled="false"
+                            android:fontFamily="@font/nunito_medium"
+                            android:gravity="right"
+                            android:inputType="text|textPersonName"
+                            android:maxLines="1"
+                            android:paddingVertical="0dp"
+                            android:paddingRight="5dp"
+                            android:text="Dattmp Nguyen"
+                            android:textColor="#bb8000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_calendar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/nunito_medium"
+                            android:labelFor="@+id/edt_birthday_user"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Sinh nhật"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/edt_birthday_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/transparent"
+                            android:enabled="false"
+                            android:fontFamily="@font/nunito_medium"
+                            android:gravity="right"
+                            android:maxLines="1"
+                            android:paddingVertical="0dp"
+                            android:paddingRight="5dp"
+                            android:text="23/09/2006"
+                            android:textColor="#bb8000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_gioitinh" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/nunito_medium"
+                            android:labelFor="@+id/edt_sex_user"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Giới tính"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <RadioGroup
+                            android:id="@+id/gr_sex_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rd_female"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:clickable="false"
+                                android:fontFamily="@font/nunito_medium"
+                                android:text="Nam"
+                                android:textColor="#bb8000"
+                                android:textSize="18sp" />
+
+                            <RadioButton
+                                android:id="@+id/rd_male"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:clickable="false"
+                                android:fontFamily="@font/nunito_medium"
+                                android:text="Nữ"
+                                android:textColor="#bb8000"
+                                android:textSize="18sp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/btn_game"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_taikhoan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/nunito_medium"
+                            android:labelFor="@+id/edt_account_user"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Tên tài khoản"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/edt_account_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/transparent"
+                            android:enabled="false"
+                            android:fontFamily="@font/nunito_medium"
+                            android:gravity="right"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingVertical="0dp"
+                            android:paddingRight="5dp"
+                            android:text="dattmpnguyen"
+                            android:textColor="#bb8000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_key" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/nunito_medium"
+                            android:labelFor="@+id/edt_password_user"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Mật khẩu"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/edt_password_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/transparent"
+                            android:enabled="false"
+                            android:fontFamily="@font/nunito_medium"
+                            android:gravity="right"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingVertical="0dp"
+                            android:paddingRight="5dp"
+                            android:text="dattmp14396"
+                            android:textColor="#bb8000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/btn_game"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingBottom="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:paddingVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_diamond"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/nunito_medium"
+                            android:labelFor="@+id/edt_streak_user"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Streak"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/edt_streak_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/transparent"
+                            android:enabled="false"
+                            android:fontFamily="@font/nunito_medium"
+                            android:gravity="right|center_vertical"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingVertical="0dp"
+                            android:paddingRight="5dp"
+                            android:text="9999"
+                            android:textColor="#bb8000"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:backgroundTint="#bb8000"
+                            android:src="@drawable/ic_fire" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:paddingVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_wordlist"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/nunito_medium"
+                            android:labelFor="@+id/edt_tudien_user"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Từ điển"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+
+                        <EditText
+                            android:id="@+id/edt_tudien_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/transparent"
+                            android:enabled="false"
+                            android:fontFamily="@font/nunito_medium"
+                            android:gravity="right|center_vertical"
+                            android:maxLines="1"
+                            android:paddingVertical="0dp"
+                            android:paddingRight="5dp"
+                            android:text="English"
+                            android:textColor="#bb8000"
+                            android:textSize="19sp" />
+                        <TextView
+                            android:id="@+id/btn_deleteDoc_detailuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/nunito_medium"
+                            android:stateListAnimator="@animator/btn_nhung"
+                            android:text="Xoá"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/bg_btndetail"
+                            android:paddingHorizontal="15dp"
+                            android:textColor="#C0001A"
+                            android:textSize="12sp"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_edit_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:fontFamily="@font/nunito_medium"
+                        android:stateListAnimator="@animator/btn_nhung"
+                        android:tag="Edit"
+                        android:text="Chỉnh sửa"
+                        android:textColor="#bb8000"
+                        android:textSize="20sp"
+                        app:backgroundTint="@android:color/transparent"
+                        app:cornerRadius="15dp"
+                        app:strokeColor="#666666"
+                        app:strokeWidth="1dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_remove_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:fontFamily="@font/nunito_medium"
+                        android:stateListAnimator="@animator/btn_nhung"
+                        android:text="Xoá tài khoản"
+                        android:textColor="#C0001A"
+                        android:textSize="20sp"
+                        app:backgroundTint="@android:color/transparent"
+                        app:cornerRadius="15dp"
+                        app:strokeColor="#666666"
+                        app:strokeWidth="1dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_close"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/white"
+        android:paddingStart="20dp"
+        android:paddingTop="0dp"
+        android:stateListAnimator="@animator/btn_truot"
+        app:icon="@drawable/ic_close_2"
+        app:iconGravity="top"
+        app:iconSize="35sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

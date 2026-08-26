@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    tools:context=".frag_game2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lHeader_G2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_bottom_g2"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtHeader_G2"
+            style="@style/style_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Spell Master"
+
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtDes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:fontFamily="@font/nunito_medium"
+            android:gravity="center"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="Tôi sẽ đợi bạn trên đỉnh vinh quang!"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHeader_G2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_close"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/white"
+            android:paddingStart="20dp"
+            android:paddingTop="0dp"
+            android:stateListAnimator="@animator/btn_truot"
+            app:icon="@drawable/ic_close_2"
+            app:iconGravity="top"
+            app:iconSize="35sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtHeader_G2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/lProgress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lHeader_G2">
+
+        <ProgressBar
+            android:id="@+id/pg_Score_Dot"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:progress="100"
+            android:progressDrawable="@drawable/bg_progress"
+            android:progressTint="#74C0FC" />
+
+        <ProgressBar
+            android:id="@+id/pg_Score"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:max="250"
+            android:progress="20"
+            android:progressDrawable="@drawable/bg_progress"
+            android:progressTint="#74C0FC"
+            android:secondaryProgress="40" />
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:fontFamily="@font/nunito_medium"
+            android:gravity="end|center_vertical"
+            android:stateListAnimator="@animator/btn_nhung"
+            android:text="9999"
+            android:textColor="#74C0FC"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_fire"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:stateListAnimator="@animator/btn_nhung"
+            app:srcCompat="@drawable/ic_diamond"
+            app:tint="#74C0FC" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lContent_G2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lProgress">
+
+        <TextView
+            android:id="@+id/txtLabelContent"
+            style="@style/style_h2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:text="gì gì ấy nhở?"
+            android:textColor="#70EAFC"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/txtContent_G2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/btn_game"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:stateListAnimator="@animator/btn_nhung">
+
+            <TextView
+                android:id="@+id/txtMean_G2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/nunito_black"
+                android:gravity="center"
+                android:maxLength="70"
+                android:maxLines="3"
+                android:lines="2"
+                android:paddingHorizontal="2dp"
+                android:text="Chủ tịch Hồ Chí Minh vĩ đại sống mãi trong sự nghiệp của chúng ta!"
+                android:textColor="#EEEEEE"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/txtIPA_G2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/nunito_medium"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:maxLines="2"
+                android:lines="2"
+                android:text="/VIET NAM/"
+                android:textColor="#BBBBBB"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edtKey_G2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="40dp"
+            android:ellipsize="start"
+            android:fontFamily="@font/nunito_black"
+            android:gravity="center"
+            android:hint="từ nào có nghĩa dân chủ..."
+            android:imeOptions="actionDone"
+            app:backgroundTint="@color/bg_edit_g2"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:letterSpacing="0.05"
+            android:maxLength="60"
+            android:maxLines="3"
+            android:text="sống mãi trong sự nghiệp của chúng ta!"
+            android:paddingBottom="10dp"
+            android:textColor="#EEEEEE"
+            android:textColorHint="#444444"
+            android:textSize="22sp">
+
+            <requestFocus />
+        </EditText>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_MoreDifficult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:fontFamily="@font/nunito_black"
+            android:text="Thử thách hơn"
+            android:textColor="#BBBBBB"
+            android:textSize="15sp"
+            app:switchPadding="15dp"
+            app:thumbTint="@color/bg_switch_g2"
+            app:trackTint="@color/bg_switch_g2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lAns_G2"
+        android:translationY="200dp"
+        android:layout_width="0dp"
+        android:layout_height="155dp"
+        android:background="@drawable/bg_ans"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/lAns_G2_KetQua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_lable_ketqua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="18sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito_black"
+                android:text="Kết quả: "
+                android:textColor="#52c234"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_ketqua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito_black"
+                android:text="Democratic"
+                android:textColor="#52c234"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_thongbao"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito_black"
+                android:text="Chính xác!"
+                android:textColor="#52c234"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_ketqua_tuongtu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="14sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/nunito_black"
+            android:text="Có thể bạn nhầm: Democratic, Republic, Socialist, Independence"
+            android:textColor="#BBBBBB"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnKiemTra"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/btn_game"
+        android:fontFamily="@font/nunito_black"
+        android:hapticFeedbackEnabled="true"
+        android:letterSpacing="0.15"
+        android:paddingTop="12dp"
+        android:paddingBottom="17dp"
+        android:stateListAnimator="@animator/btngames"
+        android:tag="check"
+        android:text="Kiểm Tra"
+        android:textAllCaps="false"
+        android:textColor="#80CCCCCC"
+        android:textSize="22sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
