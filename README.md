@@ -1,6 +1,6 @@
 # LanChallenge - Personalized Vocabulary Trainer
 
-**LanChallenge là ứng dụng Android giúp người dùng học và luyện tập từ vựng cá nhân hóa thông qua các bài test trắc nghiệm gamified, hỗ trợ quản lý dữ liệu linh hoạt từ file `.txt`.
+**LanChallenge** là ứng dụng Android giúp người dùng học và luyện tập từ vựng cá nhân hóa thông qua các bài test trắc nghiệm gamified, hỗ trợ quản lý dữ liệu linh hoạt từ file `.txt`.
 
 ---
 
