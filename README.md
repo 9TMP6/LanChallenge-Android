@@ -85,6 +85,11 @@ LanChallenge-Android/
 
 ## 📋 Hướng dẫn cài đặt & Thiết lập dự án
 
+### Tải ứng dụng (File APK)
+1. Truy cập mục **[Releases](../../releases)** ở cột bên phải giao diện GitHub repository.
+2. Tải về file `.apk` ở phiên bản mới nhất.
+3. Mở file `.apk` trên điện thoại Android để cài đặt (cấp quyền cài đặt ứng dụng từ nguồn ngoài nếu thiết bị yêu cầu).
+
 ### Yêu cầu hệ thống
 * Android Studio (phiên bản 2022.3 trở lên).
 * JDK 11 hoặc JDK 17.
